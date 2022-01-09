@@ -47,7 +47,7 @@ function Main(props) {
         </div>
 
         <div>
-          <span className="total-number">£0.00</span>
+          <span className="total-number">{`£${props.totalValue()}`}</span>
         </div>
       </div>
     </main>

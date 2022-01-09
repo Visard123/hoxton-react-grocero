@@ -65,6 +65,8 @@ function App() {
       amount: 0,
     },
   ]);
+
+  const [cartItems, setCartItems] = useState([]);
   function addToCart(items, item) {
     return items.map(function (product) {
       return product.id === item.id
@@ -91,6 +93,14 @@ function App() {
     });
   }
 
+  function totalValue() {
+    let total = 0;
+    for (const item of cartItems) {
+      total += item.price * item.amount;
+    }
+    return total.toFixed(2);
+  }
+
   return (
     <>
       <Header items={items} setItems={setItems} addToCart={addToCart} />
@@ -99,6 +109,7 @@ function App() {
         setItems={setItems}
         addToCart={addToCart}
         removeFromCart={removeFromCart}
+        totalValue={totalValue}
       />
     </>
   );
