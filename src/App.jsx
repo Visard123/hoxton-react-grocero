@@ -65,10 +65,41 @@ function App() {
       amount: 0,
     },
   ]);
+  function addToCart(items, item) {
+    return items.map(function (product) {
+      return product.id === item.id
+        ? {
+            ...product,
+            // quantityInCart: item.quantityInCart++,
+            // quantityInStore: item.quantityInStore--,
+            amount: product.amount + 1,
+          }
+        : product;
+    });
+  }
+
+  function removeFromCart(items, item) {
+    return items.map(function (product) {
+      return product.id === item.id
+        ? {
+            ...product,
+            // quantityInCart: item.quantityInCart++,
+            // quantityInStore: item.quantityInStore--,
+            amount: product.amount - 1,
+          }
+        : product;
+    });
+  }
+
   return (
     <>
-      <Header />
-      <Main />
+      <Header items={items} setItems={setItems} addToCart={addToCart} />
+      <Main
+        items={items}
+        setItems={setItems}
+        addToCart={addToCart}
+        removeFromCart={removeFromCart}
+      />
     </>
   );
 }

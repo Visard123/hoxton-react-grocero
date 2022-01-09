@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
 :root {
   --primary-color: #5068b6;
@@ -9,7 +9,7 @@
 /* Typography */
 
 body {
-  font-family: 'Trebuchet MS', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans", Arial, sans-serif;
   color: var(--primary-color-darker);
 }
 

@@ -13,7 +13,14 @@ function Header(props) {
                 alt={item.name}
               />
             </div>
-            <button>Add to cart</button>
+            <button
+              onClick={function (event) {
+                props.setItems(props.addToCart(props.items, item));
+              }}
+            >
+              {" "}
+              Add to cart
+            </button>
           </li>
         ))}
       </ul>
